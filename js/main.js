@@ -10,7 +10,18 @@ var mySwiper = new Swiper('.swiper-container', {
          delay: 7000,
       },
       speed: 2800,
+      type: 'bullets'
    },
-})
+});
+
+let slider = document.querySelector('.swiper-wrapper');
+
+slider.addEventListener('mousemove', () => {
+   mySwiper.autoplay.stop();
+});
+
+slider.addEventListener('mouseout', () => {
+   mySwiper.autoplay.start();
+});
 
 mySwiper.autoplay.start();
